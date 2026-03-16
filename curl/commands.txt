@@ -1,0 +1,3 @@
+curl -X POST -i --data '{"name": "Herlon", "age": 30}' localhost:3000
+lsof -i :PORT
+kill -9 PROCESS_PID

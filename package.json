@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-graceful-shutdown",
+  "version": "1.0.0",
+  "description": "NodeJS application with graceful shutdown",
+  "main": "src/server.js",
+  "scripts": {
+    "start:dev": "node --watch src/server.js"
+  },
+  "keywords": [],
+  "author": "Herlon Costa",
+  "license": "ISC",
+  "type": "module"
+}
