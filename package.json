@@ -5,10 +5,14 @@
   "main": "src/server.js",
   "scripts": {
     "start:server": "node --watch src/server.js",
-    "start:server-cluster": "node --watch src/server-with-cluster.js"
+    "start:server-cluster": "node --watch src/server-with-cluster.js",
+    "test:server": "npx autocannon -c 1000 -d 10 -j > relatorio-status.json http://localhost:3000/api/status"
   },
   "keywords": [],
   "author": "Herlon Costa",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "autocannon": "^8.0.0"
+  }
 }

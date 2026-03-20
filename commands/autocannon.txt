@@ -1,0 +1,21 @@
+Relatório simples: npx autocannon -c 100 -d 10 http://localhost:3000/api/status
+Relatório mais completo: npx autocannon -c 100 -d 10 -j > relatorio-status.json http://localhost:3000/api/status
+FLAGS:
+
+-l (ou --latency): Esta é a flag mais importante para análise de performance.
+Ela gera uma tabela detalhada mostrando a distribuição da latência (o tempo de 
+resposta) da sua API. Em vez de apenas uma "média", você verá percentis cruciais 
+como 2.5%, 50%, 97.5% e 99% (P99). Isso permite responder a perguntas como: "99% 
+dos meus usuários recebem a resposta em menos de quantos milissegundos?".
+
+-S (ou --renderStatusCodes): Exibe um bloco extra no relatório detalhando exatamente 
+quais códigos de status HTTP o servidor retornou. É vital para garantir que sua API 
+não está retornando erros 500 (Internal Server Error) ou 503 (Service Unavailable) 
+silenciosamente sob pressão, enquanto você acha que todas as requisições foram 
+bem-sucedidas.
+
+-W (ou --warmup): Fundamental para aplicações Node.js. O motor V8 do JavaScript utiliza 
+compilação JIT (Just-In-Time). Isso significa que o código fica mais rápido à medida que 
+é executado repetidas vezes. A flag de warmup dispara algumas requisições iniciais para 
+"aquecer" o servidor antes de começar a cronometrar o teste real, entregando métricas 
+muito mais fiéis ao comportamento da sua API em produção.

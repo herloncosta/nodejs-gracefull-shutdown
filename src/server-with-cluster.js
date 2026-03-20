@@ -17,6 +17,7 @@ const handleRequest = (request, response) => {
 				workerId: process.pid,
 			}),
 		);
+		return;
 	}
 
 	response.writeHead(404, { "Content-Type": "application/json" });
